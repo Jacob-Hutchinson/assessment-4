@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
     <title>Back End Assessment</title>
   </head>
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Get a fortune</button>
     <button id="dogs">get random dog name</button>
-    <button id="dogList">get random dog list</button>
+    <br><br><br>
+    
 
-  </div>
-  
-  <form class="dogName">
-    <input type="text"
-    id="dogName"
-    placeholder="enter a new dog name"
-    >
-  </form>
-  
-  <div class="dogs">
-    <h2 id="dogName">
-      <button id="delete">delete</button>
-    </h2>
+    <form id="addDog" class="addDogForm">
+      <h3>enter your dog here</h3>
+      <input id="new-name" type="text" placeholder="name" class="input-form"><br>
+      <input id="new-lvl" type="text" placeholder="traininglvl" class="input-form"><br>
+      <input id="new-breed" type="text" placeholder="breed" class="input-form"><br>
+      <button id="dogSubmitButton">submit</button>
 
+    </form><br>
 
-    <section class="doglist">
+    <section id="doglist">hello</section><br>
+    <section id="edit-dogs">hello</section>
 
-    </section>
+    <div id="gotcha"></div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-      document.getElementById("complimentButton").onclick = function () {
+      document.getElementById("complimentButton").onclick  = function () {
         axios.get("http://localhost:4000/api/compliment/")
             .then(function (response) {
               const data = response.data;

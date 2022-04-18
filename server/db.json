@@ -1,23 +1,33 @@
 [
     {
-        "id": 1,
-        "name": "doug"
+        "name": "doug",
+        "trainingLvl": 5,
+        "breed": "lab",
+        "id": 1
     },
     {
         "id": 2,
-        "name": "buddy"
+        "name": "buddy",
+        "trainingLvl": 5,
+        "breed": "German-shepherd"
     },
     {
         "id":3,
-        "name": "kya"
+        "name": "kya",
+        "trainingLvl": 5,
+        "breed": "lab"
     },
     {
         "id": 4,
-        "name": "airbud"
+        "name": "airbud",
+        "trainingLvl": 5,
+        "breed": "golden"
     },
     {
         "id": 5,
-        "name": "clyde"
+        "name": "clyde",
+        "trainingLvl": 5,
+        "breed": "lab"
     }
 
 ]

@@ -8,34 +8,24 @@ app.use(cors());
 
 app.use(express.json()); // When we want to be able to accept JSON.
 
-const {getDogs, getDogs2, changeDog, createDog, deleteDog} = require('./controller')
+const {DogNames, getDogs2, changeDog, createDog, deleteDog} = require('./controller')
+const sample = require('./sampleController')
 
 
 
-app.get("/api/compliment", getDogs)
 
-app.get('/api/compliment', getDogs2)
+app.get('/api/dbdogs', getDogs2)
 
-app.put("/api/compliment", changeDog)
+app.post("/api/dbdogs", createDog)
 
-app.post("/api/compliment", createDog)
+app.put("/api/dbdogs/:id", changeDog)
 
-app.delete("/api/compliment/:id", deleteDog)
-
+app.delete("/api/dbdogs/:id", deleteDog)
 
 
-app.get("/api/compliment", (req, res) => {
-  const compliments = ["Gee, you're a smart cookie!",
-					 "Cool shirt!",
-					 "Your Javascript skills are stellar.",
-  ];
-
-  // choose random compliment
-  let randomIndex = Math.floor(Math.random() * compliments.length);
-  let randomCompliment = compliments[randomIndex];
-
-  res.status(200).send(randomCompliment);
-  
-});
+//alert buttons 
+app.get("/api/compliment", sample.compliment);
+app.get("/api/fortune", sample.fortune);
+app.get("/api/random", DogNames)
 
 app.listen(4000, () => console.log("Server running on 4000"));
